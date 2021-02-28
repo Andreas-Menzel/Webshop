@@ -1,0 +1,262 @@
+/******************************************************************************/
+/***************************** WEBSITE STRUCTURE ******************************/
+/******************************************************************************/
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#ws_page {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+main {
+  width: 100%;
+  padding-bottom: 6rem;
+}
+
+footer {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+  background-color: black;
+}
+
+.content {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (min-width: 631.5789473684px) {
+  .halfContentWidth {
+    width: 600px;
+    margin: auto;
+  }
+}
+@media (min-width: 947.3684210526px) {
+  .twoThirdContentWidth {
+    width: 900px;
+    margin: auto;
+  }
+}
+/**************************/
+/* END - WEBSITE STUCTURE */
+/**************************/
+/******************************************************************************/
+/************************************ FONT ************************************/
+/******************************************************************************/
+html {
+  /* fallback */
+  font-size: 19px;
+  font-size: 1.6vw;
+  line-height: 1.5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1375px) {
+  html {
+    font-size: 22px;
+  }
+}
+p, a, h1, h2, h3, h4, h5, h6,
+ul, ol, table {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 1.5rem 0 1.25rem 0;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin: 1.25rem 0 1rem 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.75rem 0;
+}
+
+h4 {
+  font-size: 1.25rem;
+  text-decoration: underline;
+  margin: 1rem 0 0.75rem 0;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+h6 {
+  font-size: 1rem;
+  text-decoration: underline;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+main {
+  color: black;
+}
+
+main p {
+  text-align: justify;
+}
+
+footer {
+  color: lightgray;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+.wrap {
+  white-space: normal;
+}
+
+input {
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+
+/**************/
+/* END - FONT */
+/**************/
+/******************************************************************************/
+/*********************************** LISTS ************************************/
+/******************************************************************************/
+ul {
+  list-style: disc;
+  line-height: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+
+ol {
+  list-style: decimal;
+  line-height: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+
+/***************/
+/* END - LISTS */
+/***************/
+/******************************************************************************/
+/*********************************** TABLES ***********************************/
+/******************************************************************************/
+.tableContainer {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid black;
+}
+
+tr .minWidth,
+tr .minWidth {
+  width: 0;
+}
+
+th {
+  font-weight: bold;
+}
+
+thead tr {
+  background-color: lightgray;
+}
+
+thead th {
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+
+tfoot tr {
+  background-color: lightgray;
+}
+
+tr + .right > th,
+tr + .right > td {
+  text-align: right;
+}
+
+tr + .center > th,
+tr + .center > td {
+  text-align: center;
+}
+
+tr + .left > th,
+tr + .left > td {
+  text-align: left;
+}
+
+th + .left,
+td + .left,
+tr + .center > .left,
+tr + .right > .left {
+  text-align: left;
+}
+
+th + .center,
+td + .center,
+tr + .left > .center,
+tr + .right > .center {
+  text-align: center;
+}
+
+th + .right,
+td + .right,
+tr + .left > .right,
+tr + .center > .right {
+  text-align: right;
+}
+
+/* TABLES IN FORMS */
+form table th,
+form table td {
+  border: 0;
+}
+
+/****************/
+/* END - TABLES */
+/****************/
+input {
+  width: 100%;
+}
+
+/*# sourceMappingURL=master.css.map */

@@ -1,0 +1,278 @@
+
+// COLORS
+$color_main_text: black;
+
+$color_footer_background: black;
+$color_footer_text: lightgray;
+// END - COLORS
+
+/******************************************************************************/
+/***************************** WEBSITE STRUCTURE ******************************/
+/******************************************************************************/
+// sass variables
+$content_width:     95;    // [%]
+$max_content_width: 1200px;
+$footer_height:     5rem;
+// end - sass variables
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#ws_page {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+main {
+  width: 100%;
+
+  padding-bottom: $footer_height + 1rem;
+}
+
+footer {
+  width: 100%;
+  height: $footer_height;
+
+  position: absolute;
+  bottom: 0;
+
+  padding: 1rem 0 1rem 0;
+
+  text-align: center;
+
+  background-color: $color_footer_background;
+}
+
+.content {
+  width: $content_width * 1%;
+  max-width: $max_content_width;
+
+  margin: auto;
+}
+
+@media (min-width: (($max_content_width * 100) / $content_width) * 0.5) {
+  .halfContentWidth {
+    width: 0.5 * $max_content_width;
+    margin: auto;
+  }
+}
+
+@media (min-width: (($max_content_width * 100) / $content_width) * 0.75) {
+  .twoThirdContentWidth {
+    width: 0.75 * $max_content_width;
+    margin: auto;
+  }
+}
+/**************************/
+/* END - WEBSITE STUCTURE */
+/**************************/
+
+/******************************************************************************/
+/************************************ FONT ************************************/
+/******************************************************************************/
+// sass variables
+$font_size_min: 16; // [px]
+$font_size: 1.6;    // [vw]
+$font_size_max: 22; // [px]
+// end - sass variables
+html {
+  /* fallback */
+  font-size: (($font_size_min + $font_size_max) / 2) * 1px;
+  font-size: $font_size * 1vw;
+
+  line-height: 1.5rem;
+}
+
+@media only screen and (max-width: (($font_size_min / $font_size) * 100) * 1px) {
+  html {
+    font-size: $font_size_min * 1px;
+  }
+}
+@media only screen and (min-width: (($font_size_max / $font_size) * 100) * 1px) {
+  html {
+    font-size: $font_size_max * 1px;
+  }
+}
+
+p, a, h1, h2, h3, h4, h5, h6,
+ul, ol, table {
+  font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+h1 {
+  font-size: 2rem;
+  margin: 1.5rem 0 1.25rem 0;
+}
+h2 {
+  font-size: 1.75rem;
+  margin: 1.25rem 0 1rem 0;
+}
+h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.75rem 0;
+}
+h4 {
+  font-size: 1.25rem;
+  text-decoration: underline;
+  margin: 1rem 0 0.75rem 0;
+}
+h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.75rem 0 0.5rem 0;
+}
+h6 {
+  font-size: 1rem;
+  text-decoration: underline;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+main {
+  color: $color_main_text;
+}
+
+main p {
+  text-align: justify;
+}
+
+footer {
+  color: $color_footer_text;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+.wrap {
+  white-space: normal;
+}
+
+input {
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+/**************/
+/* END - FONT */
+/**************/
+
+/******************************************************************************/
+/*********************************** LISTS ************************************/
+/******************************************************************************/
+ul {
+  list-style: disc;
+  line-height: 1.25rem;
+
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+
+ol {
+  list-style: decimal;
+  line-height: 1.25rem;
+
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+/***************/
+/* END - LISTS */
+/***************/
+
+/******************************************************************************/
+/*********************************** TABLES ***********************************/
+/******************************************************************************/
+.tableContainer {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid black;
+}
+
+tr .minWidth,
+tr .minWidth {
+  width: 0;
+}
+
+th {
+  font-weight: bold;
+}
+
+thead tr {
+  background-color: lightgray;
+}
+
+thead th {
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+
+tfoot tr {
+  background-color: lightgray;
+}
+
+tr + .right > th,
+tr + .right > td {
+  text-align: right;
+}
+tr + .center > th,
+tr + .center > td {
+  text-align: center;
+}
+tr + .left > th,
+tr + .left > td {
+  text-align: left;
+}
+
+th + .left,
+td + .left,
+tr + .center > .left,
+tr + .right > .left {
+  text-align: left;
+}
+th + .center,
+td + .center,
+tr + .left > .center,
+tr + .right > .center {
+  text-align: center;
+}
+th + .right,
+td + .right,
+tr + .left > .right,
+tr + .center > .right {
+  text-align: right;
+}
+
+/* TABLES IN FORMS */
+form table {
+  th,
+  td {
+    border: 0;
+  }
+}
+/****************/
+/* END - TABLES */
+/****************/
+
+input {
+  width: 100%;
+}
