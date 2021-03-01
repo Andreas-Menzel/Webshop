@@ -15,6 +15,10 @@
 </head>
 <body>
   <div id="ws_page">
+    <nav>
+      <?php include_once("content/website_structure/navigation.php"); ?>
+    </nav>
+
     <main>
       <?php include_once("content/" . $page["content_path"] . $page["file_name"]); ?>
     </main>

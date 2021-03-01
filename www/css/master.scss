@@ -2,9 +2,24 @@
 // COLORS
 $color_main_text: black;
 
-$color_footer_background: black;
+$color_footer_background: #343F3E;
 $color_footer_text: lightgray;
 // END - COLORS
+
+/******************************************************************************/
+/*********************************** COLORS ***********************************/
+/******************************************************************************/
+:root {
+  --color_dark: #8291A6;
+  --color_light: #F9F9F9;
+  --color_accent: #9CA4B5;
+  --color_primary: #9ccad8;
+  --color_text_dark: #2a333c;
+  --color_text_light: #F9F9F9;
+}
+/****************/
+/* END - COLORS */
+/****************/
 
 /******************************************************************************/
 /***************************** WEBSITE STRUCTURE ******************************/
@@ -16,14 +31,45 @@ $footer_height:     5rem;
 // end - sass variables
 
 body {
-  height: 100%;
+  height: 100vh;
   overflow-x: hidden;
+}
+
+body,
+.section_dark {
+  background-color: var(--color_dark);
+  color: var(--color_text_light);
+}
+
+.section_light {
+  background-color: var(--color_light);
+  color: var(--color_text_dark);
 }
 
 #ws_page {
   width: 100%;
   min-height: 100%;
   position: relative;
+}
+
+nav {
+  width: 100%;
+  height: auto;
+
+  padding: 1rem 0 1rem 0;
+
+  background-color: #ABAEB1;//B1B49F;
+  color: var(--color_primary);
+
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.seperator {
+  width: 100%;
+  height: 0.25rem;
+
+  background-color: var(--color_primary);
 }
 
 main {
@@ -43,7 +89,7 @@ footer {
 
   text-align: center;
 
-  background-color: $color_footer_background;
+  background-color: var(--color_primary);
 }
 
 .content {
@@ -53,14 +99,14 @@ footer {
   margin: auto;
 }
 
-@media (min-width: (($max_content_width * 100) / $content_width) * 0.5) {
+@media (min-width: round(($max_content_width * 100) / $content_width) * 0.5) {
   .halfContentWidth {
     width: 0.5 * $max_content_width;
     margin: auto;
   }
 }
 
-@media (min-width: (($max_content_width * 100) / $content_width) * 0.75) {
+@media (min-width: round(($max_content_width * 100) / $content_width) * 0.75) {
   .twoThirdContentWidth {
     width: 0.75 * $max_content_width;
     margin: auto;
@@ -123,7 +169,7 @@ h2 {
 }
 h3 {
   font-size: 1.5rem;
-  margin: 1rem 0 0.75rem 0;
+  margin-bottom: 0.75rem;
 }
 h4 {
   font-size: 1.25rem;
@@ -141,12 +187,15 @@ h6 {
   margin: 0.75rem 0 0.5rem 0;
 }
 
-main {
-  color: $color_main_text;
+b {
+  font-weight: bold;
+}
+i {
+  font-style: italic;
 }
 
-main p {
-  text-align: justify;
+main {
+  text-align: center;
 }
 
 footer {
@@ -167,6 +216,65 @@ input {
 /**************/
 /* END - FONT */
 /**************/
+
+/******************************************************************************/
+/****************************** CONTENT DIVIDER *******************************/
+/******************************************************************************/
+.content_divider_begin {
+  width: 100%;
+  height: 1rem;
+
+  margin-top: calc(1rem + 3vw);
+
+  position: relative;
+}
+.content_divider_begin::before {
+  content: '';
+  width: 100%;
+  height: 3vw;
+
+  position: absolute;
+
+  bottom: 1rem;
+  left: 0;
+
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.content_divider_end {
+  width: 100%;
+  height: 1rem;
+
+  margin-bottom: calc(1rem + 3vw);
+
+  position: relative;
+}
+.content_divider_end::after {
+  content: '';
+  width: 100%;
+  height: 3vw;
+
+  position: absolute;
+
+  top: 1rem;
+  left: 0;
+
+  clip-path: polygon(100% 0, 0 100%, 0 0);
+}
+
+.content_divider_dark,
+.content_divider_dark::before,
+.content_divider_dark::after {
+  background-color: var(--color_dark);
+}
+.content_divider_light,
+.content_divider_light::before,
+.content_divider_light::after {
+  background-color: var(--color_light);
+}
+/*************************/
+/* END - CONTENT DIVIDER */
+/*************************/
 
 /******************************************************************************/
 /*********************************** LISTS ************************************/
@@ -205,29 +313,57 @@ table {
 
 th, td {
   padding: 0.25rem 0.5rem;
-  border: 1px solid black;
 }
 
-tr .minWidth,
-tr .minWidth {
-  width: 0;
+thead tr,
+.section_dark thead tr {
+  background-color: var(--color_accent);
+}
+tfoot tr,
+.section_dark tfoot tr {
+  background-color: var(--color_accent);
 }
 
-th {
+th,
+.section_dark th {
   font-weight: bold;
+  color: var(--color_text_light);
 }
 
-thead tr {
-  background-color: lightgray;
+td,
+.section_dark td {
+  color: var(--color_text_dark);
+  background-color: var(--color_light);
 }
+
+
 
 thead th {
   padding: 0.5rem 0.75rem;
   text-align: center;
 }
 
-tfoot tr {
-  background-color: lightgray;
+.table_allborder {
+  th, td {
+    border: 1px solid black;
+  }
+}
+
+.table_vlines {
+  th {
+    border-left: 1px solid var(--color_light);
+  }
+  td {
+    border-left: 1px solid var(--color_accent);
+  }
+  th:first-of-type,
+  td:first-of-type {
+    border-left: 0;
+  }
+}
+
+tr .minWidth {
+  width: 0;
 }
 
 tr + .right > th,
@@ -273,6 +409,84 @@ form table {
 /* END - TABLES */
 /****************/
 
+/******************************************************************************/
+/******************************** PRODUCT PAGE ********************************/
+/******************************************************************************/
+.product_wrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+                      "img title"
+                      "img desc"
+                      "img cart";
+
+  padding: 1rem 0;
+}
+
+@media (max-width: 719px) {
+  .product_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+                        "title"
+                        "img"
+                        "cart";
+  }
+
+  .product_description {
+    display: none;
+  }
+}
+
+.product_image {
+  grid-area: img;
+
+  box-shadow: 0 0 5px 3px rgba(52, 63, 62, 0.2);
+}
+
+.product_title {
+  grid-area: title;
+
+  padding: 0 1rem;
+}
+
+.product_description .container {
+  border-radius: 0.5rem;
+  background-color: var(--color_accent);
+}
+
+.product_description b {
+  color: var(--color_primary);
+  text-shadow: 0 0 3px var(--color_dark);
+}
+
+.product_description {
+  grid-area: desc;
+
+  padding: 0 1rem;
+}
+
+.product_cart {
+  grid-area: cart;
+
+  padding: 0 1rem;
+}
+/**********************/
+/* END - PRODUCT PAGE */
+/**********************/
+
+
+
 input {
   width: 100%;
 }
+
+img {
+  max-width: 100%;
+}
+
+/****/
+/*  */
+/****/
