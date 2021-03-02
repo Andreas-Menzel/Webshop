@@ -11,9 +11,8 @@
       <h3>Tolles Produkt</h3>
     </div>
 
-    <div class="product_description">
+    <div class="product_description section_light">
       <div class="container">
-        <p><b>Beschreibung</b></p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat
           perferendis, quisquam ipsum libero in, praesentium expedita ut veritatis
@@ -22,7 +21,7 @@
       </div>
     </div>
 
-    <div class="product_cart">
+    <div class="product_cart section_light">
       <p><b>Gewählte Konfiguration:</b></p>
       <p>Material: PLA; Farbe: Prusa Galaxy Black; Größe: Klein</p>
       <input type="submit" name="" value="Zum Warenkorb">
@@ -75,7 +74,7 @@
 
 <div class="content">
   <p>
-    Bei diesem wundervollen 3D-Druck handelt es sich um ein atemberaubendes
+    Bei diesem <b>wundervollen 3D-Druck</b> handelt es sich um ein atemberaubendes
     Schloss. Die hohen Burgmauern schützen die Bewohner vor Feinden! Und so
     weiter und so fort.
   </p>

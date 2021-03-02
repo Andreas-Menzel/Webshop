@@ -1,3 +1,3 @@
 <div class="content">
-  Home | Shop | About Us
+  Home &nbsp;&nbsp;&nbsp; Shop &nbsp;&nbsp;&nbsp; About Us
 </div>
